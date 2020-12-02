@@ -43,5 +43,3 @@ FROM Movies, MovieExec
 WHERE producerC# = cert# AND netWorth > 10000000
 GROUP BY name
 HAVING MIN(year) < 1990;
-
-// CONSTRAINTS ON RELATIONS
