@@ -1,0 +1,10 @@
+/* E.g. Find all producer names of movies where 'Robert Downy Jr.' has played a role in? */
+
+SELECT name
+FROM MovieExec, (SELECT producerC#
+                 FROM Movies, StarsIn
+                 WHERE starName - 'Robert Downey Jr.'
+                 AND Movies.title = StarsIn.title
+                 AND Movies.year = StarsIn.year)Prod
+WHERE cert# = Prod.producerC#;
+
