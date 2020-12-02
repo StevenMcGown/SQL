@@ -8,3 +8,10 @@ FROM MovieExec, (SELECT producerC#
                  AND Movies.year = StarsIn.year)Prod
 WHERE cert# = Prod.producerC#;
 
+/* Find all movies produced by Dreamworks in the year 2007. List the shortest length movie first and break ties by the alphabetical ordering of movie names. */
+
+SELECT *
+FROM Movies
+WHERE studioName = 'Dreamworks' AND year = 2007
+ORDER BY length, title ASC;
+
